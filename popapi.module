@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_entity_bundle_field_info_alter().
+ */
+function popapi_entity_bundle_field_info_alter(&$fields, \Drupal\Core\Entity\EntityTypeInterface $entity_type, $bundle) {
+  if ($bundle === 'popapi') {
+    if (isset($fields['field_event_id'])) {
+      $fields['field_event_id']->addConstraint('CodeUnique', []);
+    }
+  }
+}

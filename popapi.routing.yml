@@ -1,0 +1,7 @@
+popapi.content:
+  path: '/test'
+  defaults:
+    _controller: '\Drupal\popapi\Controller\EventsController::content'
+    _title: 'Test'
+  requirements:
+    _permission: 'access content'
