@@ -52,11 +52,7 @@ class EventsDataController {
    * @return mixed
    */
   public function latestEventNode() {
-    $query = \Drupal::entityQuery('node');
-    $query->condition('status', 1);
-    $query->condition('type', 'events');
-    $query->sort('field_eventbrite_event_created', 'ASC');
-    $id_array = $query->range(0, 1)->execute();
+    $id_array = EventNodeController::loadLatestEventDate();
 
     if (count($id_array) > 0) {
       foreach ($id_array as $id) {

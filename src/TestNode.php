@@ -13,13 +13,15 @@ function searchEvents($query) {
   $wrapper = new EventsBriteWrapper($token, $http);
   $data_ctrl = new EventsDataController($wrapper, $data);
 
-  $x = $data_ctrl->latestEventNode();
+  //$x = $data_ctrl->latestEventNode();
 
 //  if ($x) {
 //    $data_ctrl->loadEventsbriteFeed($query);
 //  }
 
-  $data_ctrl->populateEventsData($query);
+  //$data_ctrl->populateEventsData($query);
+
+  var_dump($data_ctrl->insertAttendee());
 
 }
 
