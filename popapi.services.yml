@@ -1,0 +1,13 @@
+services:
+  popapi.api_token:
+    class: Drupal\popapi\Manager\TokenManager
+
+  popapi.api_data:
+    class: Drupal\popapi\Manager\ApiData
+
+  popapi.api_fetcher:
+    class: Drupal\popapi\Http\FetchEvents
+  popapi.api_data_ctrl:
+    class: Drupal\popapi\Controller\EventsDataController
+  popapi.api_wrapper:
+    class: Drupal\popapi\Manager\EventsBriteWrapper

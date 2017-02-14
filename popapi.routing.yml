@@ -1,0 +1,23 @@
+popapi.content:
+  path: '/test'
+  defaults:
+    _controller: '\Drupal\popapi\Controller\EventsController::content'
+    _title: 'Test'
+  requirements:
+    _permission: 'access content'
+
+popapi.attendeecount:
+  path: '/popapi/attendeecount'
+  defaults:
+    _controller: '\Drupal\popapi\Controller\EventAttendanceController::insertAttendee'
+  methods: [POST]
+  requirements:
+    _access: 'TRUE'
+
+popapi.fetchevents:
+  path: '/popapi/fetchevents'
+  defaults:
+    _controller: '\Drupal\popapi\Controller\EventFeedController::fetchEvents'
+  methods: [GET]
+  requirements:
+    _access: 'TRUE'
